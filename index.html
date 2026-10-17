@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShopNG — Votre Boutique</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">ShopNG</div>
+    <nav>
+      <a href="#">Accueil</a>
+      <a href="#products">Produits</a>
+      <a href="#">Panier <span class="cart-count" id="cart-count">0</span></a>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <h1>Bienvenue sur ShopNG</h1>
+      <p>Découvrez nos produits</p>
+    </section>
+
+    <section class="product-grid" id="products">
+
+      <article class="card">
+        <div class="card-media">🎧</div>
+        <h2 class="card-title">Casque Audio Pro</h2>
+        <p class="card-desc">Réduction de bruit active, 30 h d'autonomie.</p>
+        <p class="card-price">799 MAD</p>
+        <button class="btn" data-name="Casque Audio Pro" data-price="799">
+          Ajouter au panier
+        </button>
+      </article>
+
+      <article class="card">
+        <div class="card-media">⌚</div>
+        <h2 class="card-title">Montre Connectée</h2>
+        <p class="card-desc">Suivi d'activité, notifications, GPS intégré.</p>
+        <p class="card-price">1 250 MAD</p>
+        <button class="btn" data-name="Montre Connectée" data-price="1250">
+          Ajouter au panier
+        </button>
+      </article>
+
+      <article class="card">
+        <div class="card-media">⌨️</div>
+        <h2 class="card-title">Clavier Mécanique</h2>
+        <p class="card-desc">Switches tactiles, rétroéclairage RGB.</p>
+        <p class="card-price">650 MAD</p>
+        <button class="btn" data-name="Clavier Mécanique" data-price="650">
+          Ajouter au panier
+        </button>
+      </article>
+
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>ShopNG · ESITH Casablanca · Business &amp; Data Management</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
