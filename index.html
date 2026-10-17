@@ -3,65 +3,166 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ShopNG — boutique en ligne de matériel tech. Projet pédagogique ESITH Casablanca.">
   <title>ShopNG — Votre Boutique</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <a class="skip-link" href="#products">Aller aux produits</a>
+
+  <!-- ============ Navbar ============ -->
   <header class="navbar">
-    <div class="logo">ShopNG</div>
-    <nav>
-      <a href="#">Accueil</a>
+    <div class="logo">
+      <span class="logo-mark" aria-hidden="true">NG</span>
+      ShopNG
+    </div>
+
+    <nav aria-label="Navigation principale">
+      <a href="#top">Accueil</a>
       <a href="#products">Produits</a>
-      <a href="#">Panier <span class="cart-count" id="cart-count">0</span></a>
+      <a href="#panier" id="cart-link">Panier</a>
     </nav>
+
+    <button class="cart-button" id="cart-toggle" aria-expanded="false" aria-controls="cart-drawer">
+      <span aria-hidden="true">🛒</span>
+      Panier
+      <span class="cart-count" id="cart-count">0</span>
+    </button>
   </header>
 
-  <main>
+  <main id="top">
 
+    <!-- ============ Hero ============ -->
     <section class="hero">
-      <h1>Bienvenue sur ShopNG</h1>
-      <p>Découvrez nos produits</p>
+      <div class="hero-inner">
+        <p class="eyebrow">Matériel tech · Livraison Casablanca</p>
+        <h1>Bienvenue sur ShopNG</h1>
+        <p class="hero-lede">Découvrez nos produits : audio, bureau et accessoires sélectionnés pour durer.</p>
+        <a class="btn btn-hero" href="#products">Voir le catalogue</a>
+      </div>
     </section>
 
-    <section class="product-grid" id="products">
+    <!-- ============ Barre d'outils : filtres + recherche ============ -->
+    <section class="toolbar" aria-label="Filtrer le catalogue">
+      <div class="filters" role="group" aria-label="Filtrer par catégorie">
+        <button class="chip is-active" data-filter="tous" aria-pressed="true">Tous</button>
+        <button class="chip" data-filter="audio" aria-pressed="false">Audio</button>
+        <button class="chip" data-filter="bureau" aria-pressed="false">Bureau</button>
+        <button class="chip" data-filter="accessoires" aria-pressed="false">Accessoires</button>
+      </div>
 
-      <article class="card">
-        <div class="card-media">🎧</div>
-        <h2 class="card-title">Casque Audio Pro</h2>
-        <p class="card-desc">Réduction de bruit active, 30 h d'autonomie.</p>
-        <p class="card-price">799 MAD</p>
-        <button class="btn" data-name="Casque Audio Pro" data-price="799">
-          Ajouter au panier
-        </button>
+      <div class="search">
+        <label class="sr-only" for="search-input">Rechercher un produit</label>
+        <input type="search" id="search-input" placeholder="Rechercher un produit…" autocomplete="off">
+      </div>
+    </section>
+
+    <!-- ============ Grille de produits ============ -->
+    <section class="product-grid" id="products" aria-label="Catalogue des produits">
+
+      <article class="card" data-category="audio">
+        <div class="card-media" aria-hidden="true">🎧</div>
+        <div class="card-body">
+          <p class="card-cat">Audio</p>
+          <h2 class="card-title">Casque Audio Pro</h2>
+          <p class="card-desc">Réduction de bruit active, 30 h d'autonomie, étui rigide inclus.</p>
+          <p class="card-price" data-price="799">799 MAD</p>
+        </div>
+        <button class="btn" data-name="Casque Audio Pro" data-price="799">Ajouter au panier</button>
       </article>
 
-      <article class="card">
-        <div class="card-media">⌚</div>
-        <h2 class="card-title">Montre Connectée</h2>
-        <p class="card-desc">Suivi d'activité, notifications, GPS intégré.</p>
-        <p class="card-price">1 250 MAD</p>
-        <button class="btn" data-name="Montre Connectée" data-price="1250">
-          Ajouter au panier
-        </button>
+      <article class="card" data-category="accessoires">
+        <div class="card-media" aria-hidden="true">⌚</div>
+        <div class="card-body">
+          <p class="card-cat">Accessoires</p>
+          <h2 class="card-title">Montre Connectée</h2>
+          <p class="card-desc">Suivi d'activité, notifications, GPS intégré, étanche 50 m.</p>
+          <p class="card-price" data-price="1250">1 250 MAD</p>
+        </div>
+        <button class="btn" data-name="Montre Connectée" data-price="1250">Ajouter au panier</button>
       </article>
 
-      <article class="card">
-        <div class="card-media">⌨️</div>
-        <h2 class="card-title">Clavier Mécanique</h2>
-        <p class="card-desc">Switches tactiles, rétroéclairage RGB.</p>
-        <p class="card-price">650 MAD</p>
-        <button class="btn" data-name="Clavier Mécanique" data-price="650">
-          Ajouter au panier
-        </button>
+      <article class="card" data-category="bureau">
+        <div class="card-media" aria-hidden="true">⌨️</div>
+        <div class="card-body">
+          <p class="card-cat">Bureau</p>
+          <h2 class="card-title">Clavier Mécanique</h2>
+          <p class="card-desc">Switches tactiles, rétroéclairage RGB, repose-poignets magnétique.</p>
+          <p class="card-price" data-price="650">650 MAD</p>
+        </div>
+        <button class="btn" data-name="Clavier Mécanique" data-price="650">Ajouter au panier</button>
+      </article>
+
+      <article class="card" data-category="bureau">
+        <div class="card-media" aria-hidden="true">🖱️</div>
+        <div class="card-body">
+          <p class="card-cat">Bureau</p>
+          <h2 class="card-title">Souris Ergonomique</h2>
+          <p class="card-desc">Capteur 16 000 dpi, six boutons programmables, silencieuse.</p>
+          <p class="card-price" data-price="320">320 MAD</p>
+        </div>
+        <button class="btn" data-name="Souris Ergonomique" data-price="320">Ajouter au panier</button>
+      </article>
+
+      <article class="card" data-category="audio">
+        <div class="card-media" aria-hidden="true">🔊</div>
+        <div class="card-body">
+          <p class="card-cat">Audio</p>
+          <h2 class="card-title">Enceinte Bluetooth</h2>
+          <p class="card-desc">20 W, résistante aux éclaboussures, 12 h de lecture continue.</p>
+          <p class="card-price" data-price="540">540 MAD</p>
+        </div>
+        <button class="btn" data-name="Enceinte Bluetooth" data-price="540">Ajouter au panier</button>
+      </article>
+
+      <article class="card" data-category="accessoires">
+        <div class="card-media" aria-hidden="true">🎒</div>
+        <div class="card-body">
+          <p class="card-cat">Accessoires</p>
+          <h2 class="card-title">Sac à Dos Tech</h2>
+          <p class="card-desc">Compartiment 16″, port USB, tissu recyclé déperlant.</p>
+          <p class="card-price" data-price="420">420 MAD</p>
+        </div>
+        <button class="btn" data-name="Sac à Dos Tech" data-price="420">Ajouter au panier</button>
       </article>
 
     </section>
+
+    <p class="empty-state" id="empty-state" hidden>Aucun produit ne correspond à votre recherche.</p>
 
   </main>
 
+  <!-- ============ Panier (tiroir latéral) ============ -->
+  <div class="overlay" id="overlay" hidden></div>
+
+  <aside class="drawer" id="cart-drawer" aria-label="Votre panier" hidden>
+    <header class="drawer-head">
+      <h2 id="panier">Votre panier</h2>
+      <button class="icon-btn" id="cart-close" aria-label="Fermer le panier">✕</button>
+    </header>
+
+    <ul class="drawer-list" id="cart-items"></ul>
+
+    <p class="drawer-empty" id="cart-empty">Votre panier est vide.</p>
+
+    <footer class="drawer-foot">
+      <div class="drawer-total">
+        <span>Total</span>
+        <strong id="cart-total">0 MAD</strong>
+      </div>
+      <button class="btn" id="cart-checkout">Passer commande</button>
+      <button class="btn btn-ghost" id="cart-clear">Vider le panier</button>
+    </footer>
+  </aside>
+
+  <!-- ============ Notification ============ -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- ============ Footer ============ -->
   <footer class="footer">
-    <p>ShopNG · ESITH Casablanca · Business &amp; Data Management</p>
+    <p><strong>ShopNG</strong> · ESITH Casablanca · Business &amp; Data Management</p>
+    <p class="footer-fine">Projet pédagogique — Livrable D1 · Séance S2</p>
   </footer>
 
   <script src="app.js"></script>
