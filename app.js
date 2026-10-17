@@ -164,6 +164,7 @@ function closeDrawer() {
   drawer.hidden = true;
   overlay.hidden = true;
   cartToggle.setAttribute("aria-expanded", "false");
+  cartToggle.focus(); // on rend le focus au bouton qui a ouvert le tiroir
 }
 
 cartToggle.addEventListener("click", openDrawer);

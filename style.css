@@ -80,6 +80,11 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* L'attribut HTML [hidden] doit toujours l'emporter.
+   Sans cette règle, une classe qui définit `display` (.drawer, .card…)
+   écrase la feuille de style du navigateur et l'élément reste visible. */
+[hidden] { display: none !important; }
+
 body {
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   font-size: var(--step-0);
