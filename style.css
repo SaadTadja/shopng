@@ -355,10 +355,21 @@ h1, h2 { text-wrap: balance; line-height: 1.2; }
 .card-media {
   display: grid;
   place-items: center;
-  padding: 1.5rem 0;
+  min-height: 12rem;
+  padding: 1rem;
   background: var(--primary-soft);
   border-radius: var(--radius-sm);
   color: var(--title);
+  overflow: hidden;
+}
+
+/* La photo produit. `contain` garde le produit entier visible quelles que
+   soient ses proportions ; si le fichier manque, app.js affiche l'icône. */
+.card-img {
+  display: block;
+  width: 100%;
+  height: 10rem;
+  object-fit: contain;
 }
 
 .card-body {

@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="ShopNG — boutique en ligne de matériel tech. Projet pédagogique ESITH Casablanca.">
   <title>ShopNG — Votre Boutique</title>
+  <!-- Favicon en SVG intégré : évite une requête /favicon.ico qui
+       renverrait 404 et afficherait une erreur dans la console. -->
+  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="%238CB928"/><text x="16" y="22" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="%23ffffff" text-anchor="middle">NG</text></svg>'>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -122,7 +125,8 @@
 
       <article class="card" data-category="audio">
         <div class="card-media">
-          <svg class="icon icon-lg" aria-hidden="true" focusable="false"><use href="#i-headphones"/></svg>
+          <img class="card-img" src="img/casque-audio-pro.jpg" alt="Casque Audio Pro : casque sans fil noir, arceau rembourre" loading="lazy" decoding="async">
+          <svg class="icon icon-lg" aria-hidden="true" focusable="false" hidden><use href="#i-headphones"/></svg>
         </div>
         <div class="card-body">
           <p class="card-cat">Audio</p>
@@ -135,7 +139,8 @@
 
       <article class="card" data-category="accessoires">
         <div class="card-media">
-          <svg class="icon icon-lg" aria-hidden="true" focusable="false"><use href="#i-watch"/></svg>
+          <img class="card-img" src="img/montre-connectee.jpg" alt="Montre connectee a bracelet blanc, cadran rectangulaire" loading="lazy" decoding="async">
+          <svg class="icon icon-lg" aria-hidden="true" focusable="false" hidden><use href="#i-watch"/></svg>
         </div>
         <div class="card-body">
           <p class="card-cat">Accessoires</p>
@@ -148,7 +153,8 @@
 
       <article class="card" data-category="bureau">
         <div class="card-media">
-          <svg class="icon icon-lg" aria-hidden="true" focusable="false"><use href="#i-keyboard"/></svg>
+          <img class="card-img" src="img/clavier-mecanique.jpg" alt="Clavier mecanique compact aux touches noires et violettes" loading="lazy" decoding="async">
+          <svg class="icon icon-lg" aria-hidden="true" focusable="false" hidden><use href="#i-keyboard"/></svg>
         </div>
         <div class="card-body">
           <p class="card-cat">Bureau</p>
@@ -161,7 +167,8 @@
 
       <article class="card" data-category="bureau">
         <div class="card-media">
-          <svg class="icon icon-lg" aria-hidden="true" focusable="false"><use href="#i-mouse"/></svg>
+          <img class="card-img" src="img/souris-ergonomique.png" alt="Souris ergonomique noire vue de dessus" loading="lazy" decoding="async">
+          <svg class="icon icon-lg" aria-hidden="true" focusable="false" hidden><use href="#i-mouse"/></svg>
         </div>
         <div class="card-body">
           <p class="card-cat">Bureau</p>
@@ -174,7 +181,8 @@
 
       <article class="card" data-category="audio">
         <div class="card-media">
-          <svg class="icon icon-lg" aria-hidden="true" focusable="false"><use href="#i-speaker"/></svg>
+          <img class="card-img" src="img/enceinte-bluetooth.jpg" alt="Enceinte Bluetooth bleue cylindrique avec anneau lumineux" loading="lazy" decoding="async">
+          <svg class="icon icon-lg" aria-hidden="true" focusable="false" hidden><use href="#i-speaker"/></svg>
         </div>
         <div class="card-body">
           <p class="card-cat">Audio</p>
@@ -187,7 +195,8 @@
 
       <article class="card" data-category="accessoires">
         <div class="card-media">
-          <svg class="icon icon-lg" aria-hidden="true" focusable="false"><use href="#i-backpack"/></svg>
+          <img class="card-img" src="img/sac-a-dos-tech.jpg" alt="Sac a dos noir porte sur une epaule" loading="lazy" decoding="async">
+          <svg class="icon icon-lg" aria-hidden="true" focusable="false" hidden><use href="#i-backpack"/></svg>
         </div>
         <div class="card-body">
           <p class="card-cat">Accessoires</p>

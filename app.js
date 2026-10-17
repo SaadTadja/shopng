@@ -245,6 +245,27 @@ chips.forEach((chip) => {
 
 searchInput.addEventListener("input", applyFilters);
 
+/* ---------- Images produit : repli sur l'icône ---------- */
+/* Si une photo est absente ou mal nommée, on masque le <img> et on
+   révèle l'icône vectorielle placée juste après. La carte reste donc
+   toujours lisible, sans image cassée ni erreur en console. */
+
+document.querySelectorAll(".card-img").forEach((image) => {
+  const useIconInstead = () => {
+    // On passe par les attributs : la propriété .hidden n'existe pas sur
+    // un élément SVG (ce n'est pas un HTMLElement), donc `svg.hidden = false`
+    // ne retirerait jamais l'attribut et l'icône resterait invisible.
+    image.setAttribute("hidden", "");
+    const icon = image.nextElementSibling;
+    if (icon) icon.removeAttribute("hidden");
+  };
+
+  image.addEventListener("error", useIconInstead);
+
+  // Le chargement a pu échouer avant l'exécution de ce script.
+  if (image.complete && image.naturalWidth === 0) useIconInstead();
+});
+
 /* ---------- Branchement des boutons « Ajouter au panier » ---------- */
 
 document.querySelectorAll(".card .btn").forEach((button) => {

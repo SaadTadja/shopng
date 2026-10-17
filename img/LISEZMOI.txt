@@ -1,0 +1,15 @@
+Images produit
+==============
+
+  casque-audio-pro.jpg     -> Casque Audio Pro     225x225
+  montre-connectee.jpg     -> Montre Connectee     447x447
+  clavier-mecanique.jpg    -> Clavier Mecanique    600x600
+  souris-ergonomique.png   -> Souris Ergonomique   400x400  (PNG : fond transparent)
+  enceinte-bluetooth.jpg   -> Enceinte Bluetooth   447x447
+  sac-a-dos-tech.jpg       -> Sac a Dos Tech       447x447
+
+Les images sont redimensionnees a 600 px maximum et compressees.
+Le nom du fichier doit correspondre a l'attribut src dans index.html.
+
+Si un fichier est absent ou mal nomme, la carte affiche automatiquement
+l'icone vectorielle a la place : la page ne casse jamais.
